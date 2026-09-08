@@ -1,0 +1,5 @@
+Objectives:-
+
+1. To acquire physiological and behavioral data using wearable sensors and camerabased monitoring techniques. 
+2. To extract and process physiological and visual features related to driver health, fatigue, stress, attention, and driving behavior. 
+3. To establish a cloud-connected framework for real-time data synchronization, storage, and management. 
