@@ -31,11 +31,11 @@ def execute_query(query, params=None):
     Executes a SQL SELECT query and returns results.
 
     Args:
-        query (str): SQL query string (e.g., "SELECT * FROM ecg_data WHERE device_id = %s")
-        params (tuple, optional): Tuple of parameters to safely insert into query (prevents SQL injection)
+        query (str): SQL query string 
+        params (tuple, optional): Tuple of parameters
 
     Returns:
-        list or None: List of tuples (rows) returned by query, or None if error
+        list or None
     """
     connection = get_db_connection()
     cursor = connection.cursor()
@@ -65,13 +65,8 @@ def insert_sensor_data(table_name, data):
     Safely handles column names and values to prevent SQL injection.
 
     Args:
-        table_name (str): Name of table (e.g., "ecg_data", "ppg_data", "mpu6050_data", "temperature_data")
+        table_name (str): Name of table
         data (dict): Dictionary of column names and values
-                     Example: {
-                         "timestamp": "2026-09-09 12:30:45+00:00",
-                         "device_id": "driver_001",
-                         "ecg_voltage": 0.85
-                     }
 
     Returns:
         bool: True if insert successful, False if error
@@ -114,12 +109,11 @@ def fetch_sensor_data(table_name, device_id, limit=100):
     Fetches sensor data for a specific device from the specified table.
 
     Args:
-        table_name (str): Name of sensor table (e.g., "ecg_data", "ppg_data")
-        device_id (str): Device identifier (e.g., "driver_001")
+        table_name (str): Name of sensor table 
         limit (int, optional): Maximum number of rows to return (default: 100)
 
     Returns:
-        list or None: List of tuples (rows) matching the criteria, or None if error
+        list or None: List of tuples 
     """
     query = "SELECT * FROM {} WHERE device_id = %s ORDER BY timestamp DESC LIMIT %s".format(table_name)
     return execute_query(query, (device_id, limit))
