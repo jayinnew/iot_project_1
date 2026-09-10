@@ -14,18 +14,33 @@ SAMPLE_RATE_MS = 100
 # Sampling interval in milliseconds (100ms = 10 samples per second)
 # How often sensors are read and data is sent to backend
 
-# Backend Configuration
-BACKEND_HOST = "localhost"
-# IP address or hostname where backend server is running
-# Change to your server IP if backend is on different machine
+# MQTT Broker Configuration
+MQTT_BROKER_HOST = "localhost"
+# IP address or hostname where MQTT broker is running
+# Change to your broker IP if running on different machine
+# For Docker/remote: change to server IP address
 
-BACKEND_PORT = 5000
-# Port number where Flask backend server is listening
-# Standard Flask development port is 5000
+MQTT_BROKER_PORT = 1883
+# Port number where MQTT broker is listening
+# Standard MQTT port is 1883 (unencrypted)
+# Use 8883 for encrypted MQTT (TLS)
 
-BACKEND_ENDPOINT = "/api/sensor-data"
-# API endpoint path where sensor data is POSTed
-# Full URL: http://BACKEND_HOST:BACKEND_PORT/api/sensor-data
+# MQTT Topics (publish sensor data to these topics)
+MQTT_TOPIC_ECG = "sensors/driver_001/ecg"
+# Topic for ECG (AD8232) sensor data
+# Hardware publishes to this topic
+
+MQTT_TOPIC_PPG = "sensors/driver_001/ppg"
+# Topic for PPG (MAX30102) sensor data
+# Hardware publishes to this topic
+
+MQTT_TOPIC_MPU6050 = "sensors/driver_001/mpu6050"
+# Topic for MPU6050 motion sensor data
+# Hardware publishes to this topic
+
+MQTT_TOPIC_TEMPERATURE = "sensors/driver_001/temperature"
+# Topic for temperature (GY-906) sensor data
+# Hardware publishes to this topic
 
 # Retry Configuration
 MAX_RETRIES = 3
