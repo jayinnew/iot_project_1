@@ -28,5 +28,7 @@ logs/
 .DS_Store
 Thumbs.db
 
-# Temporary
-*.tmp
+# Editor swap files (vim/nano/emacs crash recovery)
+*.swp
+*~
+*.swo

@@ -2,7 +2,7 @@
 
 ## Data Flow
 
-1. Arduino Uno reads four sensors: ECG, PPG, Motion, and Temperature
+1. ESP32 reads four sensors: ECG, PPG, Motion, and Temperature
 2. Sensor data publishes to MQTT broker running on localhost port 1883
 3. Four separate Python subscribers listen to different sensor topics
 4. Each subscriber receives data and validates the values
@@ -10,7 +10,7 @@
 
 ## Technologies Used
 
-1. Arduino Uno microcontroller with four sensor modules
+1. ESP32 microcontroller with four sensor modules
 2. Mosquitto MQTT broker for message routing
 3. Python with paho-mqtt library for MQTT communication
 4. PostgreSQL database for storing sensor readings
