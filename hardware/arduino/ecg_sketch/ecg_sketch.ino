@@ -8,7 +8,7 @@
 // ===== USER CONFIG - CHANGE THESE =====
 const char* ssid = "OPPO F31 5G k3r6";        // Your phone's hotspot name
 const char* password = "gfduvd6drcuhd67g5y7ig6gi"; // Your hotspot password
-const char* mqtt_server = "10.227.254.31";      // Your laptop IP (from hostname -I)
+const char* mqtt_server = "10.224.23.31";      // Your laptop IP (from hostname -I)
 const int mqtt_port = 1883;
 // ========================================
 
